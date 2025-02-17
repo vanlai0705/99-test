@@ -8,6 +8,7 @@ interface FormattedWalletBalance {
   formatted: string;
 }
 
+// BoxProps is not declared
 interface Props extends BoxProps {
 
 }
@@ -49,8 +50,8 @@ const WalletPage: React.FC<Props> = (props: Props) => {
 
 
   const rows = sortedBalances.map((balance: FormattedWalletBalance, index: number) => {
-    //prices[balance.currency] is cannot undefined
-    // const usdValue = prices[balance.currency] * balance.amount;
+    /*prices[balance.currency] is cannot undefined
+    const usdValue = prices[balance.currency] * balance.amount; */
     const usdValue = prices[balance.currency] ? prices[balance.currency] * balance.amount : 0;
 
     //shoud change  key = index into key = balance.currency
